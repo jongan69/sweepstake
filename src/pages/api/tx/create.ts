@@ -14,7 +14,7 @@ import {
   getAssociatedTokenAddress,
   getMint,
 } from "@solana/spl-token";
-import { LOCKIN_MINT, DEFAULT_WALLET } from "@utils/globals";
+import { DEFAULT_WALLET, SOL_MINT } from "@utils/globals";
 
 export type TxCreateData = {
   tx: string;
@@ -38,7 +38,7 @@ export default async function handler(
       receiverAddress = DEFAULT_WALLET,
       amount = 1,
       type = "sol",
-      tokenAddress = LOCKIN_MINT,
+      tokenAddress = SOL_MINT,
     } = req.body as Input;
 
     const connection = new Connection(NETWORK);
